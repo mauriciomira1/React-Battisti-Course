@@ -1,4 +1,5 @@
 import "./App.css";
+import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <h1>Aula de React</h1>
       <ManageData />
+      <ListRender />
     </>
   );
 }
