@@ -2,7 +2,7 @@
 import "./App.css";
 
 // React
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 
 // Data
 import { wordsList } from "./data/words.jsx";
@@ -67,7 +67,42 @@ function App() {
 
   // process the letter input
   const verifyLetter = (letter) => {
-    console.log(letter);
+    const normalizeLetter = letter.toLowerCase();
+
+    // check if the letter has already been used
+    if (
+      guessedLetters.includes(normalizeLetter) ||
+      wrongLetters.includes(normalizeLetter)
+    ) {
+      return;
+    }
+
+    // push guessed letter or remove a guess
+    if (letters.includes(normalizeLetter)) {
+      setGuessedLetters((actualGuessedLetters) => [
+        ...actualGuessedLetters,
+        normalizeLetter,
+      ]);
+    } else {
+      setWrongLetters((actualWrongLetters) => [
+        ...actualWrongLetters,
+        normalizeLetter,
+      ]);
+      setGuesses((actualGuesses) => actualGuesses - 1);
+    }
+  };
+
+  useEffect(() => {
+    if (guesses <= 0) {
+      // reset all states
+
+      setGameStage(stages[2].name);
+    }
+  }, [guesses]);
+
+  // retry the game
+  const retry = () => {
+    setGameStage(stages[1].name);
   };
 
   return (
@@ -75,6 +110,7 @@ function App() {
       {gameStage === "start" && <StartScreen startGame={StartGame} />}
       {gameStage === "game" && (
         <Game
+          verifyLetter={verifyLetter}
           startGame={StartGame}
           pickedWord={pickedWord}
           pickedCategory={pickedCategory}
@@ -85,7 +121,7 @@ function App() {
           score={score}
         />
       )}
-      {gameStage === "end" && <GameOver startGame={StartGame} />}
+      {gameStage === "end" && <GameOver startGame={StartGame} retry={retry} />}
     </div>
   );
 }

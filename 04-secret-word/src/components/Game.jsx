@@ -26,7 +26,7 @@ const Game = ({
 
     setLetter("");
 
-    /*     letterInputRef.current.focus(); */
+    letterInputRef.current.focus();
   };
 
   return (
@@ -61,6 +61,7 @@ const Game = ({
             required
             value={letter}
             ref={letterInputRef}
+            autoComplete="off"
           />
           <button>Jogar!</button>
         </form>
