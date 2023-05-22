@@ -26,7 +26,7 @@ const Game = ({
 
     setLetter("");
 
-    letterInputRef.current.focus();
+    /*     letterInputRef.current.focus(); */
   };
 
   return (
@@ -67,7 +67,8 @@ const Game = ({
       </div>
       <div className="wrongLettersContainer">
         <p>Letras já utilizadas:</p>
-        <span key={i}>{letter} | </span>
+        {wrongLetters.map((letter, i) => (
+          <span key={i}>{letter}, </span>
         ))}
       </div>
     </div>
