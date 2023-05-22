@@ -2,6 +2,7 @@
 import "./App.css";
 
 // React
+// eslint-disable-next-line no-unused-vars
 import { useCallback, useEffect, useState, useRef } from "react";
 
 // Data
@@ -30,6 +31,8 @@ function App() {
   const [wrongLetters, setWrongLetters] = useState([]);
   const [guesses, setGuesses] = useState(3);
   const [score, setScore] = useState(0);
+
+  const guessesQuantity = 3;
 
   const pickWordAndCategory = () => {
     // pick a random category
@@ -92,16 +95,26 @@ function App() {
     }
   };
 
+  const clearLetterStates = () => {
+    setGuessedLetters([]);
+    setWrongLetters([]);
+  };
+
+  // check if the guesses ended
   useEffect(() => {
     if (guesses <= 0) {
       // reset all states
-
+      clearLetterStates();
       setGameStage(stages[2].name);
     }
   }, [guesses]);
 
-  // retry the game
+  // check win condition
+
+  // restart the game
   const retry = () => {
+    setScore(0);
+    setGuesses(guessesQuantity);
     setGameStage(stages[1].name);
   };
 
@@ -121,7 +134,9 @@ function App() {
           score={score}
         />
       )}
-      {gameStage === "end" && <GameOver startGame={StartGame} retry={retry} />}
+      {gameStage === "end" && (
+        <GameOver startGame={StartGame} retry={retry} score={score} />
+      )}
     </div>
   );
 }

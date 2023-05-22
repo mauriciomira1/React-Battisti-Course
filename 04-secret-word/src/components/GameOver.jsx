@@ -1,10 +1,14 @@
 import "./GameOver.css";
 
-const GameOver = ({ retry }) => {
+// eslint-disable-next-line react/prop-types
+const GameOver = ({ retry, score }) => {
   return (
     <div>
-      <h1>GameOver</h1>
-      <button onClick={retry}>Reiniciar</button>
+      <h1>Fim de jogo!</h1>
+      <h2>
+        A sua pontuação foi: <span>{score}</span>
+      </h2>
+      <button onClick={retry}>Reiniciar Jogo</button>
     </div>
   );
 };
