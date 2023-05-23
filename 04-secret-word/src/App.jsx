@@ -39,12 +39,10 @@ function App() {
     const categories = Object.keys(words);
     const category =
       categories[Math.floor(Math.random() * Object.keys(categories).length)];
-    console.log(category);
 
     // pick a random word
     const word =
       words[category][Math.floor(Math.random() * words[category].length)];
-    console.log(category, word);
 
     return { word, category };
   }, [words]);
@@ -121,14 +119,14 @@ function App() {
   // check win condition
   useEffect(() => {
     const uniqueLetters = [...new Set(letters)];
-    setScore(0);
+
     // win condition
     if (guessedLetters.length === uniqueLetters.length) {
       // add score
       setScore((actualScore) => (actualScore += 100));
 
       // restart game with new word
-      StartGame;
+      StartGame();
     }
   }, [guessedLetters, letters, StartGame]);
 
