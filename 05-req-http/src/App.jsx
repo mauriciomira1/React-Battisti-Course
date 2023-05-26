@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 
 // 4 - Custom hook
@@ -7,7 +7,7 @@ import { useFetch } from "./hooks/useFetch";
 const url = "http://localhost:3000/products";
 
 function App() {
-  const [products, setProducts] = useState([]);
+  /*   const [products, setProducts] = useState([]); */
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 

@@ -15,10 +15,11 @@ export function useFetch(url) {
       setConfig({
         method,
         headers: {
-          "Content-Type: application/json"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
       })
+      setMethod(method)
     }
   }
 
@@ -45,7 +46,7 @@ export function useFetch(url) {
     }
 
     httpRequest();
-  }, [config])
+  }, [config, method, url])
 
   return { data, httpConfig };
 }
