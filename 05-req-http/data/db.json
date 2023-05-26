@@ -14,6 +14,26 @@
       "id": 3,
       "name": "Boné aba reta",
       "price": 29.9
+    },
+    {
+      "name": "Abacate",
+      "price": "2.20",
+      "id": 4
+    },
+    {
+      "name": "Notebook Asus",
+      "price": "6440",
+      "id": 5
+    },
+    {
+      "name": "Banana",
+      "price": "3.29",
+      "id": 6
+    },
+    {
+      "name": "Caderno",
+      "price": "34.5",
+      "id": 7
     }
   ]
 }
