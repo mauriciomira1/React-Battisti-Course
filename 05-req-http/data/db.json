@@ -44,6 +44,51 @@
       "name": "Mouse",
       "price": "200",
       "id": 9
+    },
+    {
+      "name": "Teclado",
+      "price": "260",
+      "id": 10
+    },
+    {
+      "name": "Monitor",
+      "price": "1200",
+      "id": 11
+    },
+    {
+      "name": "Mousepad",
+      "price": "120",
+      "id": 12
+    },
+    {
+      "name": "Caixa de som",
+      "price": "198",
+      "id": 13
+    },
+    {
+      "name": "Papel amassado",
+      "price": "19",
+      "id": 14
+    },
+    {
+      "name": "Papel novo",
+      "price": "219",
+      "id": 15
+    },
+    {
+      "name": "Papel novo",
+      "price": "219",
+      "id": 16
+    },
+    {
+      "name": "Tomate",
+      "price": "19.20",
+      "id": 17
+    },
+    {
+      "name": "Arroz",
+      "price": "21.50",
+      "id": 18
     }
   ]
 }
