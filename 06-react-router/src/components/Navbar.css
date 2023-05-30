@@ -16,6 +16,11 @@ nav a:hover {
 }
 
 .active {
-  background-color: black;
+  background-color: rgb(132, 39, 158);
+  border-radius: 3px;
   color: white;
+}
+
+.esta-ativo {
+  background-color: yellow;
 }
