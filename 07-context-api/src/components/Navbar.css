@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+nav a {
+  margin: 0 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: #000;
+}
+
+nav a:hover {
+  color: gray;
+}
+
+.active {
+  background-color: rgb(132, 39, 158);
+  border-radius: 3px;
+  color: white;
+}
+
+.esta-ativo {
+  background-color: yellow;
+}
